@@ -202,67 +202,113 @@ export const Hero: FC = () => {
             <span>AI / ML Portfolio</span>
           </motion.div>
 
-          {/* Name */}
-          <motion.h1 variants={fadeUp} className="hero-name-cinematic">
-            <span className="hero-name-word gradient-text-cinematic">Shiva</span>
-          </motion.h1>
+          <div className="hero-split">
+            <div className="hero-left">
+              {/* Name */}
+              <motion.h1 variants={fadeUp} className="hero-name-cinematic">
+                <span
+                  className="hero-name-word gradient-text-cinematic"
+                  style={{ fontSize: "clamp(3.6rem, 9.6vw, 7.2rem)" }}
+                >
+                  Shiva
+                </span>
+              </motion.h1>
 
-          {/* Role typing */}
-          <motion.div variants={fadeUp} className="hero-role-row">
-            <span className="hero-role-cin">
-              {text}
-              <span className="hero-caret" />
-            </span>
-          </motion.div>
+              {/* Role typing */}
+              <motion.div variants={fadeUp} className="hero-role-row">
+                <span className="hero-role-cin">
+                  {text}
+                  <span className="hero-caret" />
+                </span>
+              </motion.div>
 
-          {/* Tagline */}
-          <motion.p variants={fadeUpFast} className="hero-tagline-cin">
-            Building intelligent systems — from document understanding
-            and RAG agents to recommendation engines and automation workflows.
-          </motion.p>
+              {/* Tagline */}
+              <motion.p variants={fadeUpFast} className="hero-tagline-cin">
+                Building intelligent systems — from document understanding
+                and RAG agents to recommendation engines and automation workflows.
+              </motion.p>
 
-          {/* CTA buttons */}
-          <motion.div variants={fadeUpFast} className="hero-actions-cin">
-            <motion.button
-              className="btn-cin primary-cin"
-              whileHover={{ scale: 1.04, boxShadow: "0 0 36px rgba(232,52,92,0.55), 0 0 60px rgba(59,130,246,0.35)" }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() =>
-                document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-              }
+              {/* CTA buttons */}
+              <motion.div variants={fadeUpFast} className="hero-actions-cin">
+                <motion.button
+                  className="btn-cin primary-cin"
+                  whileHover={{
+                    scale: 1.04,
+                    boxShadow:
+                      "0 0 36px rgba(232,52,92,0.55), 0 0 60px rgba(59,130,246,0.35)",
+                  }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() =>
+                    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  View Projects
+                </motion.button>
+
+                <motion.button
+                  className="btn-cin ghost-cin"
+                  whileHover={{ scale: 1.03, borderColor: "rgba(96,165,250,0.8)" }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() =>
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  Get in Touch
+                </motion.button>
+              </motion.div>
+
+              {/* Metrics strip */}
+              <motion.div variants={fadeUpFast} className="hero-metrics-cin">
+                <div className="hero-metric-cin">
+                  <span className="hero-metric-val">3+</span>
+                  <span className="hero-metric-lbl">AI Projects</span>
+                </div>
+                <div className="hero-metric-divider" />
+                <div className="hero-metric-cin">
+                  <span className="hero-metric-val">RAG</span>
+                  <span className="hero-metric-lbl">LangChain · FAISS</span>
+                </div>
+                <div className="hero-metric-divider" />
+                <div className="hero-metric-cin">
+                  <span className="hero-metric-val">OCR</span>
+                  <span className="hero-metric-lbl">Invoice Automation</span>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="hero-right"
             >
-              View Projects
-            </motion.button>
-
-            <motion.button
-              className="btn-cin ghost-cin"
-              whileHover={{ scale: 1.03, borderColor: "rgba(96,165,250,0.8)" }}
-              whileTap={{ scale: 0.97 }}
-              onClick={() =>
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Get in Touch
-            </motion.button>
-          </motion.div>
-
-          {/* Metrics strip */}
-          <motion.div variants={fadeUpFast} className="hero-metrics-cin">
-            <div className="hero-metric-cin">
-              <span className="hero-metric-val">3+</span>
-              <span className="hero-metric-lbl">AI Projects</span>
-            </div>
-            <div className="hero-metric-divider" />
-            <div className="hero-metric-cin">
-              <span className="hero-metric-val">RAG</span>
-              <span className="hero-metric-lbl">LangChain · FAISS</span>
-            </div>
-            <div className="hero-metric-divider" />
-            <div className="hero-metric-cin">
-              <span className="hero-metric-val">OCR</span>
-              <span className="hero-metric-lbl">Invoice Automation</span>
-            </div>
-          </motion.div>
+              <motion.div
+                className="hero-photo-card"
+                initial={{
+                  opacity: 0,
+                  x: 80,
+                  scale: 0.9,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  x: [0, 10, -10, 0],
+                  y: [0, -15, 10, 0],
+                  rotate: [0, 1.5, -1.5, 0],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  rotateX: 5,
+                  rotateY: -5,
+                }}
+                style={{ transformPerspective: 1000 }}
+              >
+                <img className="hero-photo" src="/shiva.jpg" alt="Shiva" loading="eager" />
+              </motion.div>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Scroll indicator */}
