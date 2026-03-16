@@ -24,7 +24,7 @@ export const Navbar: FC = () => {
           className="navbar-logo"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           onClick={() => handleScroll('hero')}
         >
           <span className="logo-mark">S</span>
@@ -35,7 +35,7 @@ export const Navbar: FC = () => {
           className="navbar-nav"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 0.61, 0.36, 1] }}
+          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
         >
           {NAV_ITEMS.map((item, i) => (
             <motion.button

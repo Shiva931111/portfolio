@@ -105,7 +105,7 @@ export const Projects: FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
             whileHover={{
               y: -7,
               borderColor: borderMap[project.color],
@@ -164,7 +164,7 @@ export const Projects: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
             whileHover={{ y: -4, transition: { duration: 0.18 } }}
           >
             <div className="project-header">

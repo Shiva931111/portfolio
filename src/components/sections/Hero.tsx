@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const ROLES = [
   "AI / ML Developer",
@@ -121,8 +121,8 @@ function useCinematicCanvas(canvasRef: React.RefObject<HTMLCanvasElement | null>
   }, [canvasRef]);
 }
 
-const containerVariants = {
-  hidden: {},
+const containerVariants: Variants = {
+  hidden: { opacity: 1 },
   visible: {
     transition: {
       staggerChildren: 0.18,
@@ -131,21 +131,21 @@ const containerVariants = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 };
 
-const fadeUpFast = {
+const fadeUpFast: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 

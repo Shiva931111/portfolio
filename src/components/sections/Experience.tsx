@@ -38,7 +38,7 @@ export const Experience: FC = () => {
             initial={{ opacity: 0, x: -28 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.5, delay: index * 0.07, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: index * 0.07, ease: "easeOut" }}
           >
             <div className="timeline-dot" />
             <div className="timeline-content">

@@ -112,7 +112,7 @@ export const Skills: FC = () => {
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, delay: index * 0.06, ease: [0.22, 0.61, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: index * 0.06, ease: "easeOut" }}
             whileHover={{ borderColor: category.accentColor, transition: { duration: 0.2 } }}
           >
             <h3 className="skills-card-label">{category.label}</h3>

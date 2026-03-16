@@ -1,14 +1,14 @@
 import type { FC } from 'react'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { SectionHeading } from '../shared/SectionHeading'
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 16 },
-  visible: (i: number) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: 'easeOut' },
-  }),
+    transition: { duration: 0.55, ease: 'easeOut' },
+  },
 }
 
 export const About: FC = () => {
@@ -24,7 +24,7 @@ export const About: FC = () => {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
         >
           <p className="body-lg">
             I build AI and machine learning systems that turn data into useful insights.
@@ -63,7 +63,7 @@ export const About: FC = () => {
               key={card.title}
               className="about-card"
               custom={i}
-              variants = {fadeUp}
+              variants={fadeUp}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
