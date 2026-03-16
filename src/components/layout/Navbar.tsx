@@ -22,28 +22,38 @@ export const Navbar: FC = () => {
       <div className="navbar-inner">
         <motion.div
           className="navbar-logo"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+          onClick={() => handleScroll('hero')}
         >
-          <span className="logo-mark">λ</span>
+          <span className="logo-mark">S</span>
           <span className="logo-text">Shiva.ai</span>
         </motion.div>
 
-        <nav className="navbar-nav">
-          {NAV_ITEMS.map((item) => (
-            <button
+        <motion.nav
+          className="navbar-nav"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 0.61, 0.36, 1] }}
+        >
+          {NAV_ITEMS.map((item, i) => (
+            <motion.button
               key={item.id}
               type="button"
               className="nav-link"
               onClick={() => handleScroll(item.id)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 + i * 0.06, duration: 0.4 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {item.label}
-            </button>
+            </motion.button>
           ))}
-        </nav>
+        </motion.nav>
       </div>
     </header>
   )
 }
-

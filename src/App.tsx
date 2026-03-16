@@ -8,25 +8,21 @@ import { Skills } from './components/sections/Skills'
 import { Projects } from './components/sections/Projects'
 import { Experience } from './components/sections/Experience'
 import { Contact } from './components/sections/Contact'
-import { ParticleField } from './components/visuals/ParticleField'
 
-const AiVisualizer = lazy(() => import('./components/visuals/AiVisualizer'))
 const Chatbot = lazy(() => import('./components/ai/Chatbot'))
 
 function App() {
   return (
     <div className="app-root">
-      <ParticleField />
+      
       <Navbar />
 
-      <main>
-        <section id="hero" className="section">
-          <Hero />
-          <Suspense fallback={<div className="loading-text">Loading 3D scene…</div>}>
-            <AiVisualizer />
-          </Suspense>
-        </section>
+      {/* Hero: full viewport, outside main container */}
+      <section id="hero">
+        <Hero />
+      </section>
 
+      <main>
         <section id="about" className="section">
           <About />
         </section>

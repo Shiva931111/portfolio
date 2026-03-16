@@ -2,59 +2,82 @@ import type { FC } from 'react'
 import { motion } from 'framer-motion'
 import { SectionHeading } from '../shared/SectionHeading'
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.1, ease: 'easeOut' },
+  }),
+}
+
 export const About: FC = () => {
   return (
     <section className="section-inner">
       <SectionHeading
         label="About"
-        title="Designing and deploying intelligent systems end‑to‑end"
+        title="AI / ML Developer focused on building intelligent systems"
       />
 
       <div className="two-column">
-        <motion.p
-          className="body-lg"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-        >
-          I&apos;m Shiva, an AI/ML engineer and AIML student passionate about building systems that
-          move beyond prototypes into real products. I focus on combining solid machine learning
-          fundamentals with practical engineering to automate workflows and ship reliable AI
-          experiences.
-        </motion.p>
-
         <motion.div
-          className="about-grid"
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
         >
-          <div className="about-card">
-            <h3>Applied AI focus areas</h3>
-            <ul>
-              <li>AI automation for repetitive back‑office workflows</li>
-              <li>Financial AI systems that understand invoices and cash flow</li>
-              <li>Document AI pipelines for unstructured PDFs and scans</li>
-              <li>Recommendation engines for products and content</li>
-              <li>LLM applications with retrieval‑augmented generation (RAG)</li>
-              <li>Production‑minded MLOps and observability</li>
-            </ul>
-          </div>
+          <p className="body-lg">
+            I build AI and machine learning systems that turn data into useful insights.
+            My work focuses on predictive models, document AI, and intelligent automation.
+          </p>
 
-          <div className="about-card">
-            <h3>How I work</h3>
-            <ul>
-              <li>Start with the problem, then choose models and tools</li>
-              <li>Design data pipelines that are observable and debuggable</li>
-              <li>Prototype fast with Python, then harden for production</li>
-              <li>Ship in tight feedback loops with realistic datasets</li>
-            </ul>
+          <div className="about-meta">
+            <span className="about-meta-tag">🤖 AI / ML Development</span>
+            <span className="about-meta-tag">📊 Data & ML Pipelines</span>
+            <span className="about-meta-tag">⚙️ Automation Systems</span>
           </div>
         </motion.div>
+
+        <div className="about-grid">
+          {[
+            {
+              title: 'Key Expertise',
+              items: [
+                'Machine Learning Models',
+                'RAG & LLM Applications',
+                'OCR Document Processing',
+                'Recommendation Systems',
+              ],
+            },
+            {
+              title: 'Approach',
+              items: [
+                'Solve real-world problems with AI',
+                'Clean and scalable Python code',
+                'Experiment and iterate quickly',
+                'Focus on measurable results',
+              ],
+            },
+          ].map((card, i) => (
+            <motion.div
+              key={card.title}
+              className="about-card"
+              custom={i}
+              variants = {fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              <h3>{card.title}</h3>
+              <ul>
+                {card.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
-

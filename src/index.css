@@ -1,34 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --bg: #020617;
-  --bg-elevated: #020617;
-  --bg-card: rgba(15, 23, 42, 0.9);
-  --bg-soft: rgba(15, 23, 42, 0.7);
+  --bg: #03020a;
+  --bg-elevated: #080616;
+  --bg-card: rgba(10, 6, 30, 0.85);
+  --bg-soft: rgba(10, 6, 30, 0.6);
 
-  --border-subtle: rgba(148, 163, 184, 0.15);
-  --border-strong: rgba(148, 163, 184, 0.3);
+  --border-subtle: rgba(180, 120, 255, 0.12);
+  --border-strong: rgba(180, 120, 255, 0.28);
 
-  --text: #e5e7eb;
-  --text-muted: #9ca3af;
-  --text-soft: #6b7280;
-  --text-strong: #f9fafb;
+  --text: #e8e4f4;
+  --text-muted: #a89fc0;
+  --text-soft: #6b6380;
+  --text-strong: #f5f2ff;
 
-  --accent: #6366f1;
-  --accent-soft: rgba(99, 102, 241, 0.18);
-  --accent-strong: #818cf8;
-  --accent-secondary: #22d3ee;
+  /* Cinematic Red + Blue palette */
+  --red: #e8345c;
+  --red-glow: rgba(232, 52, 92, 0.55);
+  --red-soft: rgba(232, 52, 92, 0.18);
+  --blue: #3b82f6;
+  --blue-glow: rgba(59, 130, 246, 0.55);
+  --blue-soft: rgba(59, 130, 246, 0.18);
+  --purple: #8b5cf6;
+
+  --accent: #8b5cf6;
+  --accent-soft: rgba(139, 92, 246, 0.18);
+  --accent-strong: #a78bfa;
+  --accent-secondary: #60a5fa;
 
   --danger: #f97373;
 
-  --radius-lg: 18px;
+  --radius-lg: 20px;
   --radius-md: 14px;
   --radius-pill: 999px;
 
-  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+  --shadow-soft: 0 18px 45px rgba(3, 2, 10, 0.9);
+  --glow-red: 0 0 40px rgba(232, 52, 92, 0.4);
+  --glow-blue: 0 0 40px rgba(59, 130, 246, 0.4);
+  --glow-purple: 0 0 40px rgba(139, 92, 246, 0.35);
 
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI',
-    sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 
   color-scheme: dark;
   font-family: var(--font-sans);
@@ -42,12 +55,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  background: radial-gradient(circle at top, #0f172a 0, #020617 60%);
+  background: var(--bg);
   color: var(--text);
 }
 
