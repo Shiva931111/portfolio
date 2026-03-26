@@ -49,7 +49,10 @@ export const Navbar: FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {item.label}
+              <span className="nav-link-inner">
+                <span>{item.label}</span>
+                {item.id === 'projects' && <span className="nav-badge-new">NEW</span>}
+              </span>
             </motion.button>
           ))}
         </motion.nav>
