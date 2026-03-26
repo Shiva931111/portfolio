@@ -206,12 +206,7 @@ export const Hero: FC = () => {
             <div className="hero-left">
               {/* Name */}
               <motion.h1 variants={fadeUp} className="hero-name-cinematic">
-                <span
-                  className="hero-name-word gradient-text-cinematic"
-                  style={{ fontSize: "clamp(3.6rem, 9.6vw, 7.2rem)" }}
-                >
-                  Shiva
-                </span>
+                <span className="hero-name-word gradient-text-cinematic">Shiva</span>
               </motion.h1>
 
               {/* Role typing */}

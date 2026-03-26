@@ -27,7 +27,7 @@ export const Navbar: FC = () => {
           transition={{ duration: 0.7, ease: "easeOut" }}
           onClick={() => handleScroll('hero')}
         >
-          <span className="logo-mark">S</span>
+          <span className="logo-mark" aria-label="Shiva logo">S</span>
           <span className="logo-text">Shiva.ai</span>
         </motion.div>
 
