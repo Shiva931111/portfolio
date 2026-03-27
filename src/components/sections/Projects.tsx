@@ -3,7 +3,10 @@ import { motion } from 'framer-motion'
 import { SectionHeading } from '../shared/SectionHeading'
 import type { Project } from '../../types/portfolio'
 
-type FeaturedProject = Project & { icon: string; color: 'red' | 'blue' | 'purple' }
+type FeaturedProject = Project & {
+  icon: string
+  color: 'red' | 'blue' | 'purple'
+}
 
 const FEATURED_PROJECTS: FeaturedProject[] = [
   {
@@ -11,22 +14,47 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     title: 'AI Invoice Automation System',
     description:
       'AI system that extracts invoice data automatically using OCR and machine learning. Detects vendor, amount, and invoice information and stores it in a structured dashboard — eliminating manual data entry.',
-    techStack: ['Python', 'Tesseract OCR', 'Computer Vision', 'Pandas', 'FastAPI'],
+    techStack: [
+      'Python',
+      'Tesseract OCR',
+      'Computer Vision',
+      'Pandas',
+      'FastAPI',
+    ],
     pipeline: 'Upload → OCR → Entity Extraction → Validation → Dashboard',
-    github: { label: 'GitHub', href: 'https://github.com/Shiva931111' },
-    live: { label: 'View Demo', href: 'https://github.com/Shiva931111' },
+    github: {
+      label: 'GitHub',
+      href: 'https://github.com/Shiva931111',
+    },
+    live: {
+      label: 'View Demo',
+      href: 'https://github.com/Shiva931111',
+    },
     icon: '🧾',
     color: 'red',
   },
   {
     id: 'rag-qa',
-    title: 'RAG PDF Question Answering',
+    title: 'RAG Assistant',
     description:
-      'LLM-based system that allows users to upload PDFs and ask questions. Uses embeddings and vector search to retrieve accurate, source-cited answers — no hallucinations, no guesswork.',
-    techStack: ['Python', 'LangChain', 'FAISS', 'OpenAI', 'Streamlit'],
-    pipeline: 'PDF Upload → Chunk & Embed → Vector Search → LLM Answer',
-    github: { label: 'GitHub', href: 'https://github.com/Shiva931111' },
-    live: { label: 'Live App', href: 'https://github.com/Shiva931111' },
+      'Advanced RAG system that allows users to upload documents and ask questions. Uses hybrid search (vector + BM25) and re-ranking to generate accurate, source-grounded answers.',
+    techStack: [
+      'Python',
+      'LangChain',
+      'Chroma',
+      'BM25',
+      'HuggingFace',
+      'Streamlit',
+    ],
+    pipeline: 'Query → Hybrid Retrieval → Re-ranking → LLM Answer',
+    github: {
+      label: 'GitHub',
+      href: 'https://github.com/Shiva931111/Rag-project',
+    },
+    live: {
+      label: 'Live App',
+      href: 'https://github.com/Shiva931111/Rag-project',
+    },
     icon: '🔍',
     color: 'blue',
   },
@@ -35,10 +63,23 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     title: 'Recommendation System',
     description:
       'Machine learning recommendation engine that analyzes user behavior and suggests relevant items such as movies or products using collaborative and content-based filtering techniques.',
-    techStack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'FastAPI'],
-    pipeline: 'Data Preprocessing → Feature Engineering → Training → Inference API',
-    github: { label: 'GitHub', href: 'https://github.com/Shiva931111/recommender-system.git' },
-    live: { label: 'Case Study', href: 'https://github.com/Shiva931111/recommender-system.git' },
+    techStack: [
+      'Python',
+      'Scikit-learn',
+      'Pandas',
+      'NumPy',
+      'FastAPI',
+    ],
+    pipeline:
+      'Data Preprocessing → Feature Engineering → Training → Inference API',
+    github: {
+      label: 'GitHub',
+      href: 'https://github.com/Shiva931111/recommender-system.git',
+    },
+    live: {
+      label: 'Case Study',
+      href: 'https://github.com/Shiva931111/recommender-system.git',
+    },
     icon: '🎯',
     color: 'purple',
   },
@@ -50,10 +91,23 @@ const OTHER_PROJECTS: (Project & { icon: string })[] = [
     title: 'Fraud Detection System',
     description:
       'ML classification model that detects fraudulent financial transactions using feature engineering, class imbalance handling, and rigorous model evaluation metrics (precision, recall, F1).',
-    techStack: ['Python', 'Scikit-learn', 'Pandas', 'XGBoost', 'Matplotlib'],
-    pipeline: 'Data Ingestion → Feature Engineering → Model Training → Evaluation',
-    github: { label: 'GitHub', href: 'https://github.com/Shiva931111' },
-    live: { label: 'Details', href: 'https://github.com/Shiva931111' },
+    techStack: [
+      'Python',
+      'Scikit-learn',
+      'Pandas',
+      'XGBoost',
+      'Matplotlib',
+    ],
+    pipeline:
+      'Data Ingestion → Feature Engineering → Model Training → Evaluation',
+    github: {
+      label: 'GitHub',
+      href: 'https://github.com/Shiva931111',
+    },
+    live: {
+      label: 'Details',
+      href: 'https://github.com/Shiva931111',
+    },
     icon: '🛡️',
   },
   {
@@ -61,10 +115,22 @@ const OTHER_PROJECTS: (Project & { icon: string })[] = [
     title: 'Neural Network Prediction Model',
     description:
       'Multi-layer neural network implemented from scratch using forward propagation and backpropagation to improve prediction accuracy on structured datasets.',
-    techStack: ['Python', 'NumPy', 'Pandas', 'Matplotlib', 'Scikit-learn'],
+    techStack: [
+      'Python',
+      'NumPy',
+      'Pandas',
+      'Matplotlib',
+      'Scikit-learn',
+    ],
     pipeline: 'Data Prep → Architecture Design → Training → Evaluation',
-    github: { label: 'GitHub', href: 'https://github.com/Shiva931111' },
-    live: { label: 'Notebook', href: 'https://github.com/Shiva931111' },
+    github: {
+      label: 'GitHub',
+      href: 'https://github.com/Shiva931111',
+    },
+    live: {
+      label: 'Notebook',
+      href: 'https://github.com/Shiva931111',
+    },
     icon: '🧠',
   },
 ]
@@ -105,7 +171,11 @@ export const Projects: FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.12,
+              ease: 'easeOut',
+            }}
             whileHover={{
               y: -7,
               borderColor: borderMap[project.color],
@@ -122,7 +192,9 @@ export const Projects: FC = () => {
 
             <div className="project-header">
               <h3>{project.title}</h3>
-              {project.pipeline && <p className="project-pipeline">{project.pipeline}</p>}
+              {project.pipeline && (
+                <p className="project-pipeline">{project.pipeline}</p>
+              )}
             </div>
 
             <p className="project-description">{project.description}</p>
@@ -134,10 +206,20 @@ export const Projects: FC = () => {
             </ul>
 
             <div className="project-links">
-              <a href={project.github.href} target="_blank" rel="noreferrer" className="project-link-btn">
+              <a
+                href={project.github.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link-btn"
+              >
                 {project.github.label} ↗
               </a>
-              <a href={project.live.href} target="_blank" rel="noreferrer" className="project-link-accent">
+              <a
+                href={project.live.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link-accent"
+              >
                 {project.live.label} →
               </a>
             </div>
@@ -164,27 +246,47 @@ export const Projects: FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+            transition={{
+              duration: 0.5,
+              delay: index * 0.1,
+              ease: 'easeOut',
+            }}
             whileHover={{ y: -4, transition: { duration: 0.18 } }}
           >
             <div className="project-header">
               <h3>
-                <span style={{ marginRight: '0.45rem' }}>{project.icon}</span>
+                <span style={{ marginRight: '0.45rem' }}>
+                  {project.icon}
+                </span>
                 {project.title}
               </h3>
-              {project.pipeline && <p className="project-pipeline">{project.pipeline}</p>}
+              {project.pipeline && (
+                <p className="project-pipeline">{project.pipeline}</p>
+              )}
             </div>
+
             <p className="project-description">{project.description}</p>
+
             <ul className="project-tech">
               {project.techStack.map((tech) => (
                 <li key={tech}>{tech}</li>
               ))}
             </ul>
+
             <div className="project-links">
-              <a href={project.github.href} target="_blank" rel="noreferrer">
+              <a
+                href={project.github.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {project.github.label} ↗
               </a>
-              <a href={project.live.href} target="_blank" rel="noreferrer" className="accent-link">
+              <a
+                href={project.live.href}
+                target="_blank"
+                rel="noreferrer"
+                className="accent-link"
+              >
                 {project.live.label}
               </a>
             </div>
